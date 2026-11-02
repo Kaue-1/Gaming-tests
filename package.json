@@ -1,0 +1,11 @@
+{
+  "name": "eclipse-rpg",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RPG 2D por turnos com nove Addictions e comandos de precisão.",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "test": "node tests/engine.test.js"
+  }
+}

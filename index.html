@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101221">
+  <title>Eclipse — Ecos do último sol</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="Eclipse, início"><span class="brand-symbol">◒</span><span>ECLIPSE<small>ECOS DO ÚLTIMO SOL</small></span></a>
+      <div class="header-actions"><span class="chapter">CAPÍTULO I <i> / </i> O SANTUÁRIO</span><button id="help-button" class="icon-button" aria-label="Como jogar">?</button><button id="sound-button" class="icon-button" aria-label="Ativar som" aria-pressed="false">♪</button></div>
+    </header>
+    <main>
+      <div class="encounter-heading"><div><span class="eyebrow">O ÚLTIMO GUARDIÃO</span><h1>Onde a luz termina<span>.</span></h1></div><div class="round"><span class="live-dot"></span> BATALHA POR TURNOS <b id="round-label">01</b></div></div>
+      <section class="arena" aria-label="Campo de batalha no Santuário do Eclipse">
+        <div class="stars"></div><div class="moon"></div><div class="mountains mountain-back"></div><div class="mountains mountain-front"></div>
+        <div class="ruin ruin-left"></div><div class="ruin ruin-right"></div><div class="floor"></div><div class="mist"></div>
+        <div class="location"><span>✦</span> SANTUÁRIO DO ECLIPSE <small>NOITE PERPÉTUA</small></div>
+        <div class="boss-hud"><div class="boss-caption"><span><small>LV. 12</small> Vesper, o Sol Vazio</span><b id="boss-hp-text"></b></div><div class="boss-bar"><div id="boss-hp-fill"></div></div><span id="boss-intent" class="intent"></span></div>
+        <div id="party-sprites" class="party-sprites"></div><div id="boss-sprite" class="combatant boss" aria-label="Vesper"></div>
+        <div id="effects" class="effects" aria-hidden="true"></div>
+        <div class="arena-caption"><span class="tiny-diamond">◆</span> A luz ainda vive em vocês.</div>
+        <div id="timing-overlay" class="timing-overlay" hidden>
+          <div class="timing-top"><span id="timing-skill"></span><span id="timing-count"></span></div>
+          <div id="timing-target" class="timing-target"><div class="target-ring"></div><div id="moving-ring" class="moving-ring"></div><button id="timing-button" aria-label="Acertar o ritmo: espaço ou quadrado">□</button></div>
+          <strong id="timing-feedback">Prepare-se</strong><div id="timing-dots" class="timing-dots"></div><p>Pressione <kbd>ESPAÇO</kbd> ou toque em <b>□</b> quando os quadrados se alinharem.</p>
+        </div>
+        <div id="result-overlay" class="result-overlay" hidden><span id="result-eyebrow" class="eyebrow"></span><h2 id="result-title"></h2><p id="result-description"></p><div id="result-stats"></div><button id="restart-button" class="primary-button">Jogar novamente <span>↗</span></button></div>
+      </section>
+      <div class="turn-strip"><div class="turn-label">ORDEM DOS TURNOS</div><div id="turn-order" class="turn-order"></div><span id="phase-label" class="phase-label">SUA VEZ</span></div>
+      <section id="party-cards" class="party-cards" aria-label="Seu grupo"></section>
+      <section class="command-panel" aria-label="Comandos da batalha"><div class="command-heading"><div><span id="actor-role" class="eyebrow"></span><h2><span id="actor-name"></span><span class="muted"> / Escolha sua Addiction</span></h2></div><button id="defend-button" class="defend-button">◇ Defender <small>+2 energia · reduz dano</small></button></div><div id="skill-list" class="skill-list"></div><div class="command-footer"><span>□ <b>Domine o ritmo.</b> Cada acerto fortalece sua habilidade.</span><span id="combo-record">MELHOR SEQUÊNCIA · 0</span></div></section>
+      <section class="journal"><span class="eyebrow">REGISTRO DE BATALHA</span><div id="battle-log" role="log" aria-live="polite" aria-relevant="additions"></div></section>
+    </main>
+    <footer><span>ECLIPSE <i> / </i> UMA PEQUENA AVENTURA</span><span>3 heróis. 9 Addictions. Um último sol. <span class="footer-star">✦</span></span></footer>
+  </div>
+  <dialog id="help-dialog"><button id="close-help" class="icon-button close" aria-label="Fechar instruções">×</button><span class="eyebrow">GUIA DO VIAJANTE</span><h2>Encontre seu ritmo.</h2><p>Fro’hu, Heifer e Goffen agem em sequência; depois, Vesper ataca. Derrote o guardião antes que todo o grupo caia.</p><ol><li><b>Escolha uma Addiction.</b> Cada herói possui três habilidades com efeitos e ritmos próprios. A primeira é gratuita; energia se recupera a cada rodada.</li><li><b>Espere os quadrados se alinharem.</b> Pressione <kbd>ESPAÇO</kbd>, <kbd>Z</kbd> ou toque em <b>□</b>. Cada etapa aceita uma tentativa. Apertar cedo demais conta como erro!</li><li><b>Perfeito &gt; Bom &gt; Erro.</b> Quanto melhor a precisão, maior o dano, a cura ou o escudo. Errar ainda produz um efeito reduzido.</li><li><b>Leia a intenção do chefe.</b> Ao carregar o Eclipse, Vesper prepara um ataque em todo o grupo. Use escudos, cura ou Defender.</li></ol><p class="help-note">Defender recupera 2 de energia e reduz em 60% o próximo dano recebido. Escudos absorvem dano até acabarem. Exposição aumenta em 35% a próxima Addiction ofensiva.</p><button id="play-button" class="primary-button">Entrar no santuário <span>→</span></button></dialog>
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
